@@ -8,9 +8,10 @@ import {
 } from "@syncfusion/ej2-react-popups";
 
 import { links } from "../data/dummy";
+import { useStateContext } from "../contexts/ContextProvider";
 
 const Sidebar = () => {
-  const activeMenu = true;
+  const { activeMenu, setActiveMenu } = useStateContext();
   const activeLink =
     "flex items-center gap-5 pl-4 pt-3 pb-2.5 rounder-lg text-white text-md m-2";
   const normalLink =
@@ -31,7 +32,9 @@ const Sidebar = () => {
             <TooltipComponent content="Menu" position="BottomCenter">
               <button
                 type="button"
-                onClick={() => {}}
+                onClick={() =>
+                  setActiveMenu((prevActiveMenu) => !prevActiveMenu)
+                }
                 className="text-xl rounded-full p-3 hover:bg-light-gray mt-4 block md:hidden"
               >
                 <MdOutlineCancel />
@@ -46,7 +49,9 @@ const Sidebar = () => {
                   <NavLink
                     to={`/${link.name}`}
                     key={link.name}
-                    onClick={() => {}}
+                    onClick={() => {
+                      setActiveMenu(false);
+                    }}
                     className={({ isActive }) =>
                       isActive ? activeLink : normalLink
                     }
