@@ -11,10 +11,16 @@ const initialState = {
 
 export const ContextProvider = ({ children }) => {
   const [activeMenu, setActiveMenu] = useState(true);
+  const [isClicked, setIsClicked] = useState(initialState);
 
   return (
     <StateContext.Provider
-      value={{ activeMenu: activeMenu, setActiveMenu: setActiveMenu }}
+      value={{
+        activeMenu: activeMenu,
+        setActiveMenu: setActiveMenu,
+        isClicked: isClicked,
+        setIsClicked: setIsClicked,
+      }}
     >
       {children}
     </StateContext.Provider>
