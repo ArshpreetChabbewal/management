@@ -4,6 +4,7 @@ import {
   SeriesCollectionDirective,
   SeriesDirective,
   Inject,
+  LineSeries,
   DateTime,
   Legend,
   Tooltip,
