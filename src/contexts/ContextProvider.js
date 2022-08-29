@@ -25,10 +25,10 @@ export const ContextProvider = ({ children }) => {
     setThemeSettings(false);
   };
 
-  const setColor = (e) => {
-    setCurrrentColor(e.target.value);
+  const setColor = (color) => {
+    setCurrrentColor(color);
 
-    localStorage.setItem("colorMode", e.target.value);
+    localStorage.setItem("colorMode", color);
 
     setThemeSettings(false);
   };
