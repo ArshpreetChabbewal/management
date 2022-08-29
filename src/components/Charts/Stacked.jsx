@@ -7,7 +7,7 @@ import {
   Legend,
   Category,
   StackingColomnSeries,
-  Tooltop,
+  Tooltip,
 } from "@syncfusion/ej2/office-chart";
 import {
   stackedCustomSeries,
@@ -25,10 +25,10 @@ const Stacked = ({ width, height }) => {
       primaryXAxis={stackedPrimaryXAxis}
       primaryYAxis={stackedPrimaryYAxis}
       chartArea={{ border: { width: 0 } }}
-      tooltop={{ enable: true }}
+      tooltip={{ enable: true }}
       legendSettings={{ background: "white" }}
     >
-      <Inject services={[Legend, Category, StackingColomnSeries, Tooltop]} />
+      <Inject services={[Legend, Category, StackingColomnSeries, Tooltip]} />
       <SeriesCollectDirective>
         <SeriesDirective>
           {stackedCustomSeries.map((item, index) => (
